@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
+@import url(//db.onlinewebfonts.com/c/9b62dc86f936227b3f7b367bd0b6c05e?family=Tw+Cen+MT);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.committees {
+  max-width: 80%;
+  padding: 0 170px;
+}
+.committees .heading,
+.committees .child-tab {
+  margin-bottom: 8px;
+}
+.committees .heading label,
+.committees .child-tab label {
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  border-radius: 3px;
+  position: relative;
+  z-index: 99;
+  transition: 0.3s;
+}
+
+.heading input:checked ~ label,
+.child-tab input:checked ~ label {
+  border-radius: 3px 3px 0 0;
+}
+.committees label span {
+  color: #424242;
+  font-size: 18px;
+  font-family: tw cen mt;
+  letter-spacing: 0px;
+}
+.committees .child-tab label span {
+  font-size: 13px;
+  font-family: poppins;
+}
+
+.heading input:checked ~ label .icon i:before,
+.child-tab input:checked ~ label .icon i:before {
+  content: "\f068";
+}
+.committees .heading .description,
+.committees .child-tab .sub-content {
+  max-height: 0px;
+  overflow: hidden;
+
+  border-radius: 0 0 3px 3px;
+  transition: all 0.4s ease;
+}
+.heading input:checked ~ .description,
+.child-tab input:checked ~ .sub-content {
+  max-height: 100vh;
+}
+
+.heading .description p,
+.child-tab .sub-content p {
+  color: #6e6e6e;
+  margin-right: 10px;
+  margin-left: 10px;
+  padding: 15px 20px;
+  font-size: 14px;
+  font-family: poppins;
+}
+.child-tab .sub-content p {
+  font-size: 15px;
+}
+input[type="radio"],
+input[type="checkbox"] {
+  display: none;
+}
+
+@media all and (max-width: 968px) {
+  .committees {
+    max-width: 100%;
+    padding: 0 7px;
+  }
+
+  .heading .description p,
+  .child-tab .sub-content p {
+    color: #6e6e6e;
+    padding: 15px 10px;
+    font-size: 14px;
+    font-family: poppins;
+  }
+  .child-tab .sub-content p {
+    font-size: 15px;
+  }
+}
